@@ -1,0 +1,75 @@
+<meta charset="UTF-8">
+
+<style>
+    .block {
+        width: 200px;
+        height: 200px
+    }
+    .red {
+        background-color: red;
+    
+    }
+    .green{
+        background-color: blue;
+    }
+    .black{
+        background-color:yellow;
+    }
+</style>
+
+<div id="clr" class="block red">
+
+</div>
+<button onclick="changeColor()">Click</button>
+<script>
+    function changeColor() {
+        let colorBlock = document.getElementById('clr');
+        switch(colorBlock.getAttribute("class")) {
+            case "block red":
+            colorBlock.setAttribute("class", "block green");
+                break;
+            case "block green":
+            colorBlock.setAttribute("class", "block black");
+                break;
+            case "block black":
+            colorBlock.setAttribute("class", "block red");
+        
+       
+
+        }
+    }
+   
+</script>
+<style>
+    .disabled {
+        background-color:tomato
+    }
+    .active {
+        background-color: blue
+    }
+</style>
+   <div onclick="use(this)" id="fist" class="block disabled">
+</div><br>
+    <div onclick="use(this)" id="second" class="block disabled">
+</div><br>
+    <div onclick="use(this)" id="third" class="block disabled">
+        </div><br>
+ Активных квадратов: <div style="display: inline;" id="count">0</div>
+ <script>
+     function use(element) {
+         let count = document.getElementById("count")
+         if (element.getAttribute("class") == "block disabled") {
+             element.setAttribute("class", "block active");
+             let number = Number(count.innerHTML);
+             number++;
+             count.innerHTML = number;
+         }  else {
+             element.setAttribute("class","block disabled");
+             let number = Number(count.innerHTML);
+             number--;
+             count.innerHTML = number;
+         }
+     }
+ </script>
+            
+            

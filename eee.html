@@ -1,0 +1,51 @@
+<style>
+    #block {
+        width: 200px;
+        height: 200px;
+        background-color: blueviolet;
+
+    }
+
+</style>
+<div id="block">
+    <h1 id ="count"></h1>
+</div>
+<script>
+    let count = 0;
+    if (localStorage.getItem('count') !== null) {
+        count = Number(localStorage.getItem('count'));
+    } else {
+        localStorage.setItem('count', 0);
+    }
+    document.getElementById('count',). innerHTML = count;
+    document.addEventListener('keydown', function (event){
+        switch (event.code) {
+            
+            case "ArrowLeft" :
+                document.getElementById('block'). style.backgroundColor="green";
+                plus();
+                break;
+                case "ArrowRight" :
+                document.getElementById('block'). style.backgroundColor="red";
+                plus();
+                break;
+                case "ArrowUp" :
+                document.getElementById('block'). style.backgroundColor="blue";
+                plus();
+                break;
+                case "ArrowDown" :
+                document.getElementById('block'). style.backgroundColor="white";
+                plus();
+                break;
+
+        
+       }
+    });
+    function plus() {
+        let count =Number(localStorage.getItem('count'));
+        document.getElementById('count').innerHTML = count + 1;
+        localStorage.setItem('count', count + 1);
+
+
+    }
+</script>

@@ -1,0 +1,8 @@
+.line {
+    display: flex;
+}
+.road {
+    width: 100px;
+    height: 100px;
+    border: blueviolet solid   2px;
+}
